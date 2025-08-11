@@ -72,19 +72,6 @@
             };
     };
 
-    macros {
-        gif: gif {
-            label = "giphy";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp N2>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp G &kp I &kp F>
-                ;
-        };
-    };
 
         keymap {
                 compatible = "zmk,keymap";
@@ -160,7 +147,7 @@ label= "SYM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp PRCNT   &bt EXCL    &kp QMARK   &none       &none           &none       &kp PIPE    &kp FSLH    &kp BSLH    &none 
+                &kp PRCNT   &kp EXCL    &kp QMARK   &none       &none           &none       &kp PIPE    &kp FSLH    &kp BSLH    &none 
                 &kp AMPS    &kp LPAR    &kp LBKT    &kp LBRC    &kp RBRC        &kp EQUAL   &kp STAR    &kp RPAR    &kp PLUS    &kp RBKT
     &to DEF     &kp GRAVE   &kp HASH    &kp TILDE   &kp DLLR    &none           &kp AT      &kp CARET   &none       &none       &none       &kp MINUS      
                                         &trans      &trans      &trans          &trans      &trans      &trans      
@@ -238,10 +225,10 @@ label= "FUN"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &sys_reset  &bt BT_CLR &out OUT_TOG &none       &none           &none       &kp F1      &kp F2      &kp F3      &kp F10
-                &bootloader &bt BT_NXT  &none       &none       &none           &none       &kp F4      &kp F5      &kp F6      &kp F11
-    &to DEF     &none       &bt BT_PRV  &none       &none       &none           &none       &kp F7      &kp F8      &kp F9      &kp F12     &none        
-                                        &trans      &trans      &trans          &trans      &trans      &trans    
+                &none       &bt BT_CLR   &out OUT_TOG &none     &none           &none       &kp F1      &kp F2      &kp F3      &kp F10
+                &none       &bt BT_SEL 0 &none        &none     &none           &none       &kp F4      &kp F5      &kp F6      &kp F11
+    &to DEF     &none       &bt BT_SEL 1 &none        &none     &none           &none       &kp F7      &kp F8      &kp F9      &kp F12     &none        
+                                         &trans       &trans    &trans          &trans      &trans      &trans    
                         >;
                 };
 
