@@ -31,10 +31,10 @@
 };
 
 &sk {
-    release-after-ms = <2000>;
+    release-after-ms = <2500>;
 };
 &sl {
-    release-after-ms = <2000>;
+    release-after-ms = <2500>;
 };
 
 / {
@@ -45,10 +45,30 @@
                 key-positions = <0 1>;
                 bindings = <&kp ESC>;
             };
-            combo_tvp {
-                timeout-ms = <100>;
-                key-positions = <11 12 13>;
-                bindings = <&tog TVP1>;
+            combo_bspc {
+                timeout-ms = <50>;
+                key-positions = <22 23>;
+                bindings = <&kp BSPC>;
+            };
+            combo_enter {
+                timeout-ms = <50>;
+                key-positions = <23 24>;
+                bindings = <&kp ENTER>;
+            };
+            combo_gui {
+                timeout-ms = <50>;
+                key-positions = <24 25>;
+                bindings = <&sk LGUI>;
+            };
+            combo_tab {
+                timeout-ms = <50>;
+                key-positions = <27 28>;
+                bindings = <&kp TAB>;
+            };
+            combo_bspc {
+                timeout-ms = <50>;
+                key-positions = <28 29>;
+                bindings = <&kp LA(TAB)>;
             };
     };
 
@@ -140,10 +160,10 @@ label= "SYM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp ESC     &bt BT_CLR  &kp UP      &kp EQUAL   &kp LBRC        &kp RBRC    &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_PLUS
-                &kp LSHFT   &kp LEFT    &kp DOWN    &kp RIGHT   &kp LBKT        &kp RBKT    &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_MINUS
-    &to DEF     &kp DEL     &kp PG_UP   &kp CAPS    &kp PG_DN   &kp LPAR        &kp RPAR    &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY &trans      
-                                        &trans      &trans      &trans          &mo ADJ     &kp KP_N0   &trans      
+                &kp PRCNT   &bt EXCL    &kp QMARK   &none       &none           &none       &kp PIPE    &kp FSLH    &kp BSLH    &none 
+                &kp AMPS    &kp LPAR    &kp LBKT    &kp LBRC    &kp RBRC        &kp EQUAL   &kp STAR    &kp RPAR    &kp PLUS    &kp RBKT
+    &to DEF     &kp GRAVE   &kp HASH    &kp TILDE   &kp DLLR    &none           &kp AT      &kp CARET   &none       &none       &none       &kp MINUS      
+                                        &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
 
@@ -166,10 +186,10 @@ label= "NUM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp RA(U)   &kp SQT     &kp DQT       
-                &kp RA(A)   &trans      &kp RA(S)   &trans      &trans          &kp C_MUTE  &kp LS(RA(N4)) &kp RA(N5) &kp RA(N4)   &kp RA(O) 
-    &to DEF     &kp RA(F18) &kp RA(F19) &trans      &trans      &trans          &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT  &kp BSLH   &trans         
-                                        &trans      &gif        &mo ADJ         &trans      &kp C_PP    &trans      
+                &none       &none       &none       &none       &none           &none       &kp N1      &kp N2      &kp N3      &kp PLUS
+                &kp LC(A)   &none       &to FUN     &none       &none           &none       &kp N4      &kp N5      &kp N6      &kp ENTER
+    &to DEF     &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp N7      &kp N8      &kp N9      &kp DOT     &kp MINUS         
+                                        &trans      &trans      &trans          &trans      &kp N0      &trans      
                         >;
                 };
 
@@ -192,9 +212,9 @@ label= "NAV"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &sys_reset  &bt BT_CLR &out OUT_TOG &trans      &trans          &trans      &kp F7      &kp F8      &kp F9      &kp F12
-                &bootloader &bt BT_NXT  &trans      &trans      &trans          &trans      &kp F4      &kp F5      &kp F6      &kp F11  
-    &to DEF     &trans      &bt BT_PRV  &trans      &trans      &trans          &trans      &kp F1      &kp F2      &kp F3      &kp F10     &trans         
+                &none       &none       &none       &none       &none           &none       &kp PG_UP   &kp UP      &kp PG_DN   &none
+                &kp LC(A)   &none       &to FUN     &none       &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
+    &to DEF     &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp HOME    &kp END     &none       &kp INS     &none
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
@@ -218,10 +238,10 @@ label= "FUN"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp TAB     &kp I       &kp LC(LALT) &kp O      &kp LC(F20)     &none       &none       &none       &none       &none
-                &lt TVP2 L  &kp LEFT    &kp LALT    &kp RIGHT   &kp SPACE       &none       &none       &none       &none       &none
-    &to DEF     &kp LSHFT   &kp LC(C)   &kp BSPC    &kp LC(V)   &kp LC(F19)     &none       &none       &none       &none       &none       &none        
-                                        &trans      &kp LC(F14) &kp LC(F13)     &none       &none       &none    
+                &sys_reset  &bt BT_CLR &out OUT_TOG &none       &none           &none       &kp F1      &kp F2      &kp F3      &kp F10
+                &bootloader &bt BT_NXT  &none       &none       &none           &none       &kp F4      &kp F5      &kp F6      &kp F11
+    &to DEF     &none       &bt BT_PRV  &none       &none       &none           &none       &kp F7      &kp F8      &kp F9      &kp F12     &none        
+                                        &trans      &trans      &trans          &trans      &trans      &trans    
                         >;
                 };
 
@@ -230,3 +250,4 @@ label= "FUN"                               ;
 
         };
 };
+// todo trilayer for mac layers
