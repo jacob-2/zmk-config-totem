@@ -42,7 +42,7 @@
             compatible = "zmk,combos";
             combo_esc {
                 timeout-ms = <50>;
-                key-positions = <0 1>;
+                key-positions = <11 12 13>;
                 bindings = <&kp ESC>;
             };
             combo_bspc {
@@ -55,11 +55,6 @@
                 key-positions = <23 24>;
                 bindings = <&kp ENTER>;
             };
-            combo_gui {
-                timeout-ms = <50>;
-                key-positions = <24 25>;
-                bindings = <&sk LGUI>;
-            };
             combo_tab {
                 timeout-ms = <50>;
                 key-positions = <27 28>;
@@ -69,6 +64,11 @@
                 timeout-ms = <50>;
                 key-positions = <28 29>;
                 bindings = <&kp LA(TAB)>;
+            };
+            combo_ {
+                timeout-ms = <50>;
+                key-positions = <16 17 18>;
+                bindings = <&to NAV>;
             };
     };
 
@@ -95,8 +95,8 @@ label= "DEF"                               ;
 
                 &kp SEMI    &kp COMMA   &kp DOT     &kp P       &kp Y           &kp F       &kp G       &kp C       &kp R       &kp L
                 &kp A       &kp O       &kp E       &kp U       &kp I           &kp D       &kp H       &kp T       &kp N       &kp S
-    &kp ESC     &kp SQT     &kp Q       &kp J       &kp K       &kp X           &kp B       &kp M       &kp W       &kp V       &kp Z       &kp MINUS
-                                        &sk LCTRL   &sk LSHFT   &sl SYM         &to NAV     &kp SPACE   &sk LALT
+    &sk LCTRL   &kp SQT     &kp Q       &kp J       &kp K       &kp X           &kp B       &kp M       &kp W       &kp V       &kp Z       &sk LALT
+                                        &sk LGUI    &sk LSHFT   &sl SYM         &to DEF     &kp SPACE   &to NUM
                         >;
                 };
 // TODO consider swapping pinky and thumb key
@@ -123,8 +123,8 @@ label= "MAC"                               ;
 
                 &kp SEMI    &kp COMMA   &kp DOT     &kp P       &kp Y           &kp F       &kp G       &kp C       &kp R       &kp L
                 &kp A       &kp O       &kp E       &kp U       &kp I           &kp D       &kp H       &kp T       &kp N       &kp S
-    &kp ESC     &kp SQT     &kp Q       &kp J       &kp K       &kp X           &kp B       &kp M       &kp W       &kp V       &kp Z       &kp MINUS
-                                        &sk LCTRL   &sk LSHFT   &sl SYM         &to NAV     &kp SPACE   &sk LALT
+    &trans      &kp SQT     &kp Q       &kp J       &kp K       &kp X           &kp B       &kp M       &kp W       &kp V       &kp Z       &trans
+                                        &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
 
@@ -148,8 +148,8 @@ label= "SYM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp PRCNT   &kp EXCL    &kp QMARK   &none       &none           &none       &kp PIPE    &kp FSLH    &kp BSLH    &none 
-                &kp AMPS    &kp LPAR    &kp LBKT    &kp LBRC    &kp RBRC        &kp EQUAL   &kp STAR    &kp RPAR    &kp PLUS    &kp RBKT
-    &to DEF     &kp GRAVE   &kp HASH    &kp TILDE   &kp DLLR    &none           &kp AT      &kp CARET   &none       &none       &none       &kp MINUS      
+                &kp AMPS    &kp LBKT    &kp LBRC    &kp LPAR    &kp RBRC        &kp EQUAL   &kp STAR    &kp RPAR    &kp PLUS    &kp RBKT
+    &trans      &kp GRAVE   &kp HASH    &kp TILDE   &kp DLLR    &none           &kp AT      &kp CARET   &kp MINUS   &kp UNDER   &none       &trans      
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
@@ -175,7 +175,7 @@ label= "NUM"                               ;
 
                 &none       &none       &none       &none       &none           &none       &kp N1      &kp N2      &kp N3      &kp PLUS
                 &kp LC(A)   &none       &to FUN     &none       &none           &none       &kp N4      &kp N5      &kp N6      &kp ENTER
-    &to DEF     &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp N7      &kp N8      &kp N9      &kp DOT     &kp MINUS         
+    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp N7      &kp N8      &kp N9      &kp DOT     &trans         
                                         &trans      &trans      &trans          &trans      &kp N0      &trans      
                         >;
                 };
@@ -201,7 +201,7 @@ label= "NAV"                               ;
 
                 &none       &none       &none       &none       &none           &none       &kp PG_UP   &kp UP      &kp PG_DN   &none
                 &kp LC(A)   &none       &to FUN     &none       &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
-    &to DEF     &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp HOME    &kp END     &none       &kp INS     &none
+    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp HOME    &kp END     &kp ENTER   &kp INS     &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
@@ -227,7 +227,7 @@ label= "FUN"                               ;
 
                 &none       &bt BT_CLR   &out OUT_TOG &none     &none           &none       &kp F1      &kp F2      &kp F3      &kp F10
                 &none       &bt BT_SEL 0 &none        &none     &none           &none       &kp F4      &kp F5      &kp F6      &kp F11
-    &to DEF     &none       &bt BT_SEL 1 &none        &none     &none           &none       &kp F7      &kp F8      &kp F9      &kp F12     &none        
+    &trans      &none       &bt BT_SEL 1 &none        &none     &none           &none       &kp F7      &kp F8      &kp F9      &kp F12     &trans        
                                          &trans       &trans    &trans          &trans      &trans      &trans    
                         >;
                 };
