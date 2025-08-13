@@ -149,7 +149,7 @@ label= "SYM"                               ;
 
                 &kp PRCNT   &kp EXCL    &kp QMARK   &none       &none           &none       &kp PIPE    &kp FSLH    &kp BSLH    &none 
                 &kp AMPS    &kp LBKT    &kp LBRC    &kp LPAR    &kp RBRC        &kp EQUAL   &kp STAR    &kp RPAR    &kp PLUS    &kp RBKT
-    &trans      &kp GRAVE   &kp HASH    &kp TILDE   &kp DLLR    &none           &kp AT      &kp CARET   &kp MINUS   &kp UNDER   &none       &trans      
+    &trans      &kp GRAVE   &kp HASH    &kp TILDE   &kp DLLR    &none           &none       &kp AT      &kp MINUS   &kp UNDER   &kp CARET   &trans      
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
