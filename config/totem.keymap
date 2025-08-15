@@ -81,7 +81,7 @@
 				, <&macro_param_1to1>
 				, <&kp 0>
 				;
-		}
+		};
 		def: def {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <0>;
@@ -89,8 +89,8 @@
 				= <&to DEF>
 				, <&kp K_CANCEL>
 				;
-		}
-	}
+		};
+	};
 
 
         keymap {
