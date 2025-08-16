@@ -65,7 +65,7 @@
                 key-positions = <28 29>;
                 bindings = <&kp LA(TAB)>;
             };
-            combo_ {
+            combo_nav {
                 timeout-ms = <50>;
                 key-positions = <16 17 18>;
                 bindings = <&to NAV>;
@@ -83,7 +83,7 @@
 				;
 		};
 		def: def {
-            compatible = "zmk,behavior-macro-one-param";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
 				= <&to DEF>
@@ -195,7 +195,7 @@ label= "NAV"                               ;
 
                 &none       &none       &none       &none       &none           &none       &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
                 &kp LC(A)   &none       &to FUN     &none       &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
-    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp HOME    &kp END     &kp ENTER   &kp INS     &trans
+    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp HOME    &kp END     &kp ENTER   &kp ENTER   &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
