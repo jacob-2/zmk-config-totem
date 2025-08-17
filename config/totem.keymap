@@ -96,13 +96,13 @@
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&kp TAB>;
-            ignored-key-positions = <11, 13>;
+            ignored-key-positions = <11 13>;
         };
         win_prv: win_prv {
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&kp LS(TAB)>;
-            ignored-key-positions = <11, 13>;
+            ignored-key-positions = <11 13>;
         };
     };
 
