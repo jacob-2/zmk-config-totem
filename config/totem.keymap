@@ -96,13 +96,7 @@
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&kp TAB>;
-            ignored-key-positions = <11 13>;
-        };
-        win_prv: win_prv {
-            compatible = "zmk,behavior-smart-toggle";
-            #binding-cells = <0>;
-            bindings = <&kp LALT>, <&kp LS(TAB)>;
-            ignored-key-positions = <11 13>;
+            ignored-key-positions = <11>;
         };
     };
 
@@ -206,8 +200,8 @@ label= "NAV"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &none      &none     &kp LC(LS(TAB)) &none      &none           &to FUN     &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
-                &kp LC(A)  &win_prv    &kp LC(TAB)   &win_nxt   &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
-    &trans      &kp LC(Z)  &kp LC(X)   &kp LC(C)     &kp LC(V)  &none           &none       &kp HOME    &kp END     &kp K_APP   &kp ENTER   &trans
+                &kp LC(A)  &kp LS(TAB) &kp LC(TAB)   &win_nxt   &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
+    &trans      &kp LC(Z)  &kp LC(X)   &kp LC(C)     &kp LC(V)  &none           &none       &kp HOME    &kp END     &kp ENTER   &kp K_APP   &trans
                                        &trans        &trans     &trans          &trans      &trans      &trans      
                         >;
                 };
