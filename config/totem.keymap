@@ -91,6 +91,20 @@
 				;
 		};
 	};
+	behaviors {
+        win_nxt: win_nxt {
+            compatible = "zmk,behavior-smart-toggle";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&kp TAB>;
+            ignored-key-positions = <11, 13>;
+        };
+        win_prv: win_prv {
+            compatible = "zmk,behavior-smart-toggle";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&kp LS(TAB)>;
+            ignored-key-positions = <11, 13>;
+        };
+    };
 
 
         keymap {
@@ -165,8 +179,8 @@ label= "NUM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &exit SEMI  &kp COMMA   &exit DOT   &none       &none           &none       &kp N1      &kp N2      &kp N3      &kp PLUS
-                &kp LC(A)   &none       &to FUN     &exit SPACE &none           &none       &kp N4      &kp N5      &kp N6      &kp DOT
+                &exit SEMI  &kp COMMA   &exit DOT   &none       &kp LNLCK       &to FUN     &kp N1      &kp N2      &kp N3      &kp PLUS
+                &kp LC(A)   &kp UNDER   &kp SPACE   &exit SPACE &none           &none       &kp N4      &kp N5      &kp N6      &kp DOT
     &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp N7      &kp N8      &kp N9      &kp ENTER   &exit N0         
                                         &trans      &trans      &trans          &kp N0      &trans      &trans
                         >;
@@ -191,10 +205,10 @@ label= "NAV"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &none       &none       &none       &none           &none       &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
-                &kp LC(A)   &none       &to FUN     &none       &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
-    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp HOME    &kp END     &kp ENTER   &kp ENTER   &trans
-                                        &trans      &trans      &trans          &trans      &trans      &trans      
+                &none      &none     &kp LC(LS(TAB)) &none      &none           &to FUN     &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
+                &kp LC(A)  &win_prv    &kp LC(TAB)   &win_nxt   &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
+    &trans      &kp LC(Z)  &kp LC(X)   &kp LC(C)     &kp LC(V)  &none           &none       &kp HOME    &kp END     &kp K_APP   &kp ENTER   &trans
+                                       &trans        &trans     &trans          &trans      &trans      &trans      
                         >;
                 };
 
