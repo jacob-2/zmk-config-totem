@@ -97,7 +97,7 @@
 				= <&to DEF>
 				, <&sl SYM>
 				;
-		}
+		};
 	};
 	behaviors {
         win_nxt: win_nxt {
