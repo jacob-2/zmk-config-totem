@@ -21,7 +21,8 @@
 #define NUM 2
 #define NAV 3
 #define FUN 4
-#define SYM 5
+#define CUS 5
+#define SYM 6
 
 &mt {
   quick-tap-ms = <100>;
@@ -40,9 +41,14 @@
 / {
      combos {
             compatible = "zmk,combos";
-            combo_esc {
+            combo_def {
                 timeout-ms = <50>;
                 key-positions = <11 12 13>;
+                bindings = <&def>;
+            };
+            combo_esc {
+                timeout-ms = <50>;
+                key-positions = <10 11 12 13>;
                 bindings = <&exit ESC>;
             };
             combo_bspc {
@@ -69,6 +75,11 @@
                 timeout-ms = <50>;
                 key-positions = <16 17 18>;
                 bindings = <&to NAV>;
+            };
+            combo_num {
+                timeout-ms = <50>;
+                key-positions = <16 17 18 19>;
+                bindings = <&to NUM>;
             };
     };
 
@@ -131,8 +142,8 @@ label= "DEF"                               ;
 
                 &kp SEMI    &kp COMMA   &kp DOT     &kp P       &kp Y           &kp F       &kp G       &kp C       &kp R       &kp L
                 &kp A       &kp O       &kp E       &kp U       &kp I           &kp D       &kp H       &kp T       &kp N       &kp S
-    &sk LCTRL   &kp SQT     &kp Q       &kp J       &kp K       &kp X           &kp B       &kp M       &kp W       &kp V       &kp Z       &to NUM
-                                        &sk LALT    &sk LSHFT   &sym            &kp SPACE   &def        &sk LGUI
+    &key_repeat &kp SQT     &kp Q       &kp J       &kp K       &kp X           &kp B       &kp M       &kp W       &kp V       &kp Z       &to CUS
+                                        &sk LALT    &sk LSHFT   &sym            &exit SPACE &sk LCTRL   &sk LGUI
                         >;
                 };
 
@@ -181,10 +192,10 @@ label= "NUM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &exit SEMI  &kp COMMA   &exit DOT   &exit SPACE &kp LNLCK       &to FUN     &kp N1      &kp N2      &kp N3      &kp PLUS
-                &kp LC(A)   &kp UNDER   &none       &kp SPACE   &none           &none       &kp N4      &kp N5      &kp N6      &kp DOT
-    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp N7      &kp N8      &kp N9      &kp ENTER   &exit N0         
-                                        &trans      &trans      &trans          &kp N0      &trans      &trans
+                &exit SEMI  &kp COMMA   &kp DOT     &kp SPACE   &kp LNLCK       &to FUN     &kp N1      &kp N2      &kp N3      &kp PLUS
+                &kp LC(A)   &kp UNDER   &sl SYM     &none       &none           &none       &kp N4      &kp N5      &kp N6      &kp N0
+    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &none           &none       &kp N7      &kp N8      &kp N9      &kp ENTER   &trans         
+                                        &trans      &trans      &trans          &trans      &trans      &trans
                         >;
                 };
 
@@ -207,10 +218,10 @@ label= "NAV"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none      &none     &kp LC(LS(TAB)) &exit SPACE &none          &to FUN     &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
-                &kp LC(A)  &kp LS(TAB) &kp LC(TAB)   &win_nxt    &none          &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
-    &trans      &kp LC(Z)  &kp LC(X)   &kp LC(C)     &kp LC(V)   &none          &none       &kp HOME    &kp END     &kp ENTER   &kp K_APP   &trans
-                                       &trans        &trans      &trans         &trans      &trans      &trans      
+                &none      &none     &kp LC(LS(TAB)) &kp SPACE  &none           &to FUN     &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
+                &kp LC(A)  &kp LS(TAB) &kp LC(TAB)   &win_nxt   &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
+    &trans      &kp LC(Z)  &kp LC(X)   &kp LC(C)     &kp LC(V)  &none           &kp K_APP   &kp HOME    &kp END     &kp V       &kp ENTER   &trans
+                                       &trans        &trans     &trans          &trans      &trans      &trans      
                         >;
                 };
 
@@ -237,6 +248,32 @@ label= "FUN"                               ;
                 &none       &bt BT_SEL 0 &none        &none     &none           &none       &kp F4      &kp F5      &kp F6      &kp F11
     &trans      &none       &bt BT_SEL 1 &none        &none     &none           &none       &kp F7      &kp F8      &kp F9      &kp F12     &trans        
                                          &trans       &trans    &trans          &trans      &trans      &trans    
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                cus_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "CUS"                               ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+
+                &none       &none       &none       &none       &none           &none       &none       &none       &none       &none  
+                &none       &none       &none       &none       &none           &none       &none       &none       &none       &none  
+    &trans      &none       &none       &none       &none       &none           &none       &none       &none       &none       &none       &trans        
+                                        &trans      &trans      &trans          &trans      &trans      &trans    
                         >;
                 };
 
