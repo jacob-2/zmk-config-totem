@@ -126,7 +126,7 @@
             bindings
 				= <&to NAV>
 				, <&kp K_CANCEL>
-				, <&kp K_ESC>
+				, <&kp ESC>
 				;
 		};
 		sym: sym {
