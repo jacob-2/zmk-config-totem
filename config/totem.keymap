@@ -245,7 +245,7 @@ label= "NAV"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &exit SEMI &none     &kp LC(LS(TAB)) &kp SPACE  &none           &to FUN     &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
+                &exit SEMI &kp LC(LS(TAB)) &exit DOT &kp SPACE  &none           &to FUN     &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
                 &kp LC(A)  &kp LS(TAB) &kp LC(TAB)   &win_nxt   &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
     &trans      &kp LC(Z)  &kp LC(X)   &kp LC(C)     &kp LC(V)  &none           &kp K_APP   &kp HOME    &kp END     &kp V       &kp ENTER   &trans
                                        &trans        &trans     &trans          &trans      &trans      &trans      
