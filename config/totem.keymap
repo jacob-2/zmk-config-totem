@@ -83,7 +83,7 @@
             };
             combo_esc_nav {
                 timeout-ms = <50>;
-                key-positions = <6 7 8>;
+                key-positions = <17 18 19>;
                 bindings = <&esc_nav>;
             };
             combo_num {
@@ -142,7 +142,7 @@
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&kp TAB>;
-            ignored-key-positions = <11>;
+            ignored-key-positions = <14>;
         };
     };
 
@@ -245,9 +245,9 @@ label= "NAV"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &exit SEMI &kp LC(LS(TAB)) &exit DOT &kp SPACE  &none           &to FUN     &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
-                &kp LC(A)  &kp LS(TAB) &kp LC(TAB)   &win_nxt   &none           &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
-    &trans      &kp LC(Z)  &kp LC(X)   &kp LC(C)     &kp LC(V)  &none           &kp K_APP   &kp HOME    &kp END     &kp V       &kp ENTER   &trans
+                &exit SEMI &exit COMMA   &exit DOT   &kp SPACE  &none           &to FUN     &kp PG_UP   &kp UP      &kp PG_DN   &kp INS
+                &kp LC(A) &kp LC(LS(TAB)) &kp LC(TAB) &win_nxt  &kp LS(TAB)     &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT   &kp BSPC  
+    &trans      &kp LC(Z)  &kp LC(Y)   &kp LC(C)     &kp LC(V)  &kp LC(X)       &kp K_APP   &kp HOME    &kp END     &kp V       &kp ENTER   &trans
                                        &trans        &trans     &trans          &trans      &trans      &trans      
                         >;
                 };
