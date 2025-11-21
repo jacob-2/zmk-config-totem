@@ -17,12 +17,13 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEF 0
-#define MAC 1
-#define NUM 2
-#define NAV 3
-#define FUN 4
-#define CUS 5
-#define SYM 6
+#define GAM 1
+#define MAC 2
+#define NUM 3
+#define NAV 4
+#define FUN 5
+#define CUS 6
+#define SYM 7
 
 &mt {
   quick-tap-ms = <100>;
